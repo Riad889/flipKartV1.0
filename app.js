@@ -2,8 +2,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const router = require("../flipKartV1.0/routes/auth");
-const order_router = require("../flipKartV1.0/routes/order");
+const router = require("./routes/auth");
+const order_router = require("./routes/order");
 const app = express();
 
 //cors is used to overcome the connection problem the frontend and backend
