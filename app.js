@@ -18,7 +18,7 @@ app.use(express.json());
 
 
 //configure the env file
-dotenv.config({ path: "./.env" });
+dotenv.config();
 
 const Port = process.env.PORT;
 
