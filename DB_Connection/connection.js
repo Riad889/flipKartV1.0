@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 
 //Db connection url
-const DB_URL1=process.env.DB_URL;
+const DB_URL1="mongodb+srv://riad:d8yeU6L33ieHmyek@cluster0.ghrvlua.mongodb.net/?retryWrites=true&w=majority";
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
