@@ -1,10 +1,11 @@
 const express=require('express');
 const router=express.Router();
-const {signUp,LoginUser, getSingleUser}=require('../controllers/user-controllers');
+const {signUp,LoginUser, getSingleUser, updateUserInformation}=require('../controllers/user-controllers');
 const {
   getAllProducts,
   getSpecificProduct,
-  addProduct
+  addProduct,
+ 
 } = require("../controllers/product-contollers");
 
 //homePage
@@ -34,6 +35,8 @@ router.post('/add',addProduct);
 router.get('/user/:id',getSingleUser);
 
 
+// update user information 
 
+router.post('/:id/update',updateUserInformation);
 
 module.exports=router;

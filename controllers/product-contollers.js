@@ -1,8 +1,10 @@
 const Products = require("../models/product-schema");
 
-const getAllProducts = async (req, res, next) => {
+const getAllProducts = async (req, res) => {
   try {
     const products = await Products.find();
+
+    //console.log("Products: ",products)
     if (products) {
       return res.status(202).json({ products });
     } else {

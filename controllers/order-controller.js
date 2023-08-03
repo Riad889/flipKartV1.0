@@ -18,14 +18,25 @@ const addOrder = async (req, res) => {
 const findOrder = async (req, res) => {
   const userId = req.query.userId;
   //console.log(req.body);
-  console.log( "userId:",userId);
+  // console.log( "userId:",userId);
   try {
-    
-    const orders = await Order.find({ user: userId })
+    const orders = await Order.find({ user: userId });
     console.log(orders);
     return res.status(202).json({ data: orders });
   } catch (error) {
     console.log(error);
   }
 };
-module.exports = { addOrder, findOrder };
+
+const deleteOneOrder = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const deleteOne = await Order.findByIdAndDelete({ _id: id });
+    if (deleteOne)
+      return res.status(202).json({ message: "Order is delete successfully" });
+    else return res.status(202).json({ message: "Error" });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+module.exports = { addOrder, findOrder, deleteOneOrder };
